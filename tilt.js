@@ -4055,4 +4055,3 @@ function tiltOnMouseEnter(elementId, opt) {
     gsapWithCSS.to(htmlElement, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.2 });
   });
 }
-tiltOnMouseEnter("czmb-t-logo0");
