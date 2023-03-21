@@ -4018,6 +4018,10 @@ var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap;
 gsapWithCSS.core.Tween;
 function tiltOnMouseEnter(elementId, opt) {
   const htmlElement = document.querySelector(`#${elementId}`);
+  if (!elementId || !htmlElement) {
+    console.warn(`id #${elementId} is invalid`);
+    return;
+  }
   const options = {
     perspective: (opt == null ? void 0 : opt.perspective) ?? 1e3,
     scale: (opt == null ? void 0 : opt.scale) ?? 1,
@@ -4036,8 +4040,12 @@ function tiltOnMouseEnter(elementId, opt) {
     const perspective = options.perspective ? options.perspective : 1e3;
     gsapWithCSS.set(htmlElement, { transformPerspective: perspective });
     gsapWithCSS.to(htmlElement, { rotateY, rotateX, scale: options.scale, duration: 0.2 });
+    console.log(`
+      transform: ${htmlElement.style.transform}
+    `);
   });
   htmlElement == null ? void 0 : htmlElement.addEventListener("mouseleave", () => {
     gsapWithCSS.to(htmlElement, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.2 });
   });
 }
+tiltOnMouseEnter("czmb-t-logo0");
