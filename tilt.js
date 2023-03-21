@@ -4041,6 +4041,8 @@ function tiltOnMouseEnter(elementId, opt) {
     gsapWithCSS.set(htmlElement, { transformPerspective: perspective });
     gsapWithCSS.to(htmlElement, { rotateY, rotateX, scale: options.scale, duration: 0.2 });
     console.log(`
+      elementWidth: ${elementWidth}
+      elementHeight: ${elementHeight}
       centerX: ${centerX}
       centerY: ${centerY}
       mousePosX: ${mousePosX}
@@ -4053,3 +4055,4 @@ function tiltOnMouseEnter(elementId, opt) {
     gsapWithCSS.to(htmlElement, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.2 });
   });
 }
+tiltOnMouseEnter("czmb-t-logo0");
