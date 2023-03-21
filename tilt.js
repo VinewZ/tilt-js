@@ -4041,7 +4041,12 @@ function tiltOnMouseEnter(elementId, opt) {
     gsapWithCSS.set(htmlElement, { transformPerspective: perspective });
     gsapWithCSS.to(htmlElement, { rotateY, rotateX, scale: options.scale, duration: 0.2 });
     console.log(`
-      transform: ${htmlElement.style.transform}
+      centerX: ${centerX}
+      centerY: ${centerY}
+      mousePosX: ${mousePosX}
+      mousePosY: ${mousePosY}
+      rotateX: ${rotateX}
+      rotateY: ${rotateY}
     `);
   });
   htmlElement == null ? void 0 : htmlElement.addEventListener("mouseleave", () => {
